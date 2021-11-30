@@ -6,7 +6,7 @@
 /*   By: ochoumou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 13:56:06 by ochoumou          #+#    #+#             */
-/*   Updated: 2021/11/30 13:44:57 by ochoumou         ###   ########.fr       */
+/*   Updated: 2021/11/30 14:07:36 by ochoumou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@ char	*ft_extract_line(char **buffer_original, char **line)
 	temp = NULL;
 	length = 0;
 	while ((*buffer_original)[length] != '\0' &&
-			/ (*buffer_original)[length] != '\n')
+	(*buffer_original)[length] != '\n')
 		length++;
 	if ((*buffer_original)[length] == '\n')
 	{
 		*line = ft_substr(*buffer_original, 0, length + 1);
 		temp = ft_substr(*buffer_original + length + 1, 0,
-				/ ft_strlen(*buffer_original) - length);
+				ft_strlen(*buffer_original) - length);
 	}
 	else
 		*line = ft_strdup(*buffer_original);
